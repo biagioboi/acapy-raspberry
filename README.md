@@ -1,9 +1,9 @@
-# Hypeledger Aries for RaspberryPI
+# Hyperledger Aries for RaspberryPI
 
 Aries offers a stable and secure communication channel between two agents. In this project I want to create a Verifiable Credentials (VCs) using JSON-LD formatted credentials for creating a strong authentication for Web of Things-compliant devices.
 In the example I will use the RaspberryPI as a possible node device interested in verifying his identity using VC.
 
-## Setup
+## Setup, before to clone
 
 As prerequisite is necessary to install `Python3` for the execution of agent and script and `Cargo` for compiling the libraries, in my case I used the version 3.9.2 for Python and 1.72.0 for Cargo.
 
