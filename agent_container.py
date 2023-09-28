@@ -718,7 +718,7 @@ class AgentContainer:
 
     async def initialize(
         self,
-        the_agent: DemoAgent = None,
+        the_agent: Agent = None,
         schema_name: str = None,
         schema_attrs: list = None,
         create_endorser_agent: bool = False,

@@ -1286,7 +1286,7 @@ class Agent:
         return connection
 
 
-class MediatorAgent(DemoAgent):
+class MediatorAgent(Agent):
     def __init__(self, http_port: int, admin_port: int, **kwargs):
         super().__init__(
             "Mediator.Agent." + str(admin_port),
@@ -1386,7 +1386,7 @@ async def connect_wallet_to_mediator(agent, mediator_agent):
     raise Exception("Mediation connection FAILED :-(")
 
 
-class EndorserAgent(DemoAgent):
+class EndorserAgent(Agent):
     def __init__(self, http_port: int, admin_port: int, **kwargs):
         super().__init__(
             "Endorser.Agent." + str(admin_port),
