@@ -34,7 +34,7 @@ cd ..
 ```
 Once all the libraries have been configured and the python dependencies have been included it is possible to install the ACA-Py library.
 ```bash
-pip3.9 install aca-py
+pip3.9 install -r requirements.txt
 ```
 ### Configuring ACA-PY: Command Line Parameters
 
