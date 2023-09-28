@@ -32,15 +32,13 @@ cp target/release/libaries_askar.so /wrappers/python/aries_askar/bindings/libari
 pip3.9 install -e ~/aries-askar/wrappers/python
 cd ..
 ```
-Once all the libraries have been configured and the python dependencies have been included it is possible to install the ACA-Py library.
+## Clone
+Once all the libraries have been configured and the python dependencies have been included it is possible to install the requirements for the project
 ```bash
 pip3.9 install -r requirements.txt
 ```
-### Configuring ACA-PY: Command Line Parameters
+## Running the Agent
 
-ACA-Py agent instances are configured through the use of command line
-parameters, environment variables and/or YAML files. All of the configurations
-settings can be managed using any combination of the three methods (command line
-parameters override environment variables override YAML). Use the `--help`
-option to discover the available command line parameters. There are a lot of
-them--for good and bad.
+```bash
+LEDGER_URL=http://<LEDGER_URL> python3.9 main.py
+```
