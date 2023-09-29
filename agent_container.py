@@ -89,6 +89,7 @@ class AriesAgent(Agent):
         # define a dict to hold credential attributes
         self.last_credential_received = None
         self.last_proof_received = None
+        self.issuance_time = {}
 
     async def detect_connection(self):
         await self._connection_ready
@@ -245,6 +246,7 @@ class AriesAgent(Agent):
         if state == "request-received":
             log_status("#17 Issue credential to X")
             # issue credential based on offer preview in cred ex record
+            self.issuance_time[cred_ex_id] = {"start": time.time(), "end": 0}
             await self.admin_POST(
                 f"/issue-credential-2.0/records/{cred_ex_id}/issue",
                 {"comment": f"Issuing credential, exchange {cred_ex_id}"},
@@ -267,7 +269,7 @@ class AriesAgent(Agent):
                 )
 
         elif state == "done":
-            pass
+            self.issuance_time[cred_ex_id]["end"] = time.time()
             # Logic moved to detail record specific handler
 
         elif state == "abandoned":

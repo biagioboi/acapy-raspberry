@@ -150,6 +150,7 @@ async def main(args):
                 option = option.strip()
 
             if option is None or option in "xX":
+                print(alice_agent.issuance_time)
                 break
 
             elif option in "dD" and alice_agent.endorser_role:
