@@ -150,10 +150,12 @@ async def main(args):
                 option = option.strip()
 
             if option is None or option in "xX":
+                times = []
                 for x in alice_agent.agent.issuance_time:
                     current = alice_agent.agent.issuance_time[x]
                     diff = current["end"] - current["start"]
-                    print(str(diff) + "\n")
+                    times.append(diff)
+                print(json.dumps(times))
                 break
 
             elif option in "dD" and alice_agent.endorser_role:
