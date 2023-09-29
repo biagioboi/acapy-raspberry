@@ -2,10 +2,10 @@ import http.client
 import json
 import time
 
-for x in range(0, 100):
+for x in range(0, 2):
     start = time.time()
 
-    connection_id = "7b45f80e-ad6e-4749-89f3-f219a7b03be6"
+    connection_id = "337559e1-87e9-4cfd-a4b9-799cd0e6e6b1"
     conn = http.client.HTTPConnection("localhost", 11001)
     payload = json.dumps({
       "auto_remove": True,
