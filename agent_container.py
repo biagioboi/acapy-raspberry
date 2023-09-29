@@ -272,6 +272,8 @@ class AriesAgent(Agent):
         elif state == "done":
             # self.issuance_time[cred_ex_id]["end"] = time.time()
             # Logic moved to detail record specific handler
+
+            self.issuance_time[cred_ex_id]["end"] = time.time()
             pass
 
         elif state == "abandoned":
