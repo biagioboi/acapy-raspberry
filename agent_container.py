@@ -558,7 +558,7 @@ class AriesAgent(Agent):
                 f"/present-proof-2.0/records/{pres_ex_id}/send-presentation",
                 request,
             )
-            self.presentation_time[pres_ex_id]["end"] = time
+            self.presentation_time[pres_ex_id]["end"] = time.time()
 
         elif state == "presentation-received":
             # verifier role
