@@ -413,6 +413,7 @@ class AriesAgent(Agent):
             # prover role
 
             self.presentation_time[pres_ex_id] = {'start': time.time(), 'end': 0}
+            tracemalloc.start()
             log_status(
                 "#24 Query for credentials in the wallet that satisfy the proof request"
             )
@@ -559,6 +560,10 @@ class AriesAgent(Agent):
                 request,
             )
             self.presentation_time[pres_ex_id]["end"] = time.time()
+            current, peak = tracemalloc.get_traced_memory()
+            print(f"Consumo di memoria corrente: {current / 10 ** 6} MB")
+            print(f"Consumo di memoria di picco: {peak / 10 ** 6} MB")
+            tracemalloc.stop()
 
         elif state == "presentation-received":
             # verifier role
