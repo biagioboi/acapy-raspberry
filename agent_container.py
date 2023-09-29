@@ -8,6 +8,8 @@ import sys
 import time
 import yaml
 
+import tracemalloc
+
 from qrcode import QRCode
 
 from aiohttp import ClientError
@@ -254,6 +256,7 @@ class AriesAgent(Agent):
         elif state == "offer-received":
 
             self.issuance_time[cred_ex_id] = {"start": time.time(), "end": 0}
+            tracemalloc.start()
             log_status("#15 After receiving credential offer, send credential request")
             if message["by_format"]["cred_offer"].get("indy"):
                 await self.admin_POST(
@@ -272,7 +275,10 @@ class AriesAgent(Agent):
         elif state == "done":
             # self.issuance_time[cred_ex_id]["end"] = time.time()
             # Logic moved to detail record specific handler
-
+            current, peak = tracemalloc.get_traced_memory()
+            print(f"Consumo di memoria corrente: {current / 10 ** 6} MB")
+            print(f"Consumo di memoria di picco: {peak / 10 ** 6} MB")
+            tracemalloc.stop()
             self.issuance_time[cred_ex_id]["end"] = time.time()
             pass
 
