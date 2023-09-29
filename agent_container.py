@@ -246,13 +246,14 @@ class AriesAgent(Agent):
         if state == "request-received":
             log_status("#17 Issue credential to X")
             # issue credential based on offer preview in cred ex record
-            self.issuance_time[cred_ex_id] = {"start": time.time(), "end": 0}
             await self.admin_POST(
                 f"/issue-credential-2.0/records/{cred_ex_id}/issue",
                 {"comment": f"Issuing credential, exchange {cred_ex_id}"},
             )
 
         elif state == "offer-received":
+
+            self.issuance_time[cred_ex_id] = {"start": time.time(), "end": 0}
             log_status("#15 After receiving credential offer, send credential request")
             if message["by_format"]["cred_offer"].get("indy"):
                 await self.admin_POST(
