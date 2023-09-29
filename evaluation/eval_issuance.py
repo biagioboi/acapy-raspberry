@@ -5,7 +5,7 @@ import time
 for x in range(0, 10):
     start = time.time()
 
-    connection_id = "82baf7c4-5173-45ad-954a-5a82c6674fa2"
+    connection_id = "707d5670-e304-4c87-996b-9ff56dbc18c2"
     conn = http.client.HTTPConnection("localhost", 11001)
     payload = json.dumps({
       "auto_remove": True,

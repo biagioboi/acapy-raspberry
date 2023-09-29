@@ -269,8 +269,9 @@ class AriesAgent(Agent):
                 )
 
         elif state == "done":
-            self.issuance_time[cred_ex_id]["end"] = time.time()
+            # self.issuance_time[cred_ex_id]["end"] = time.time()
             # Logic moved to detail record specific handler
+            pass
 
         elif state == "abandoned":
             log_status("Credential exchange abandoned")
