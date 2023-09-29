@@ -158,7 +158,7 @@ async def main(args):
                 print(json.dumps(times))
                 times_pres = []
                 if alice_agent.agent.presentation_time is not {}:
-                    current = alice_agent.agent.issuance_time[x]
+                    current = alice_agent.agent.presentation_time[x]
                     diff = current["end"] - current["start"]
                     times_pres.append(diff)
                 print(json.dumps(times_pres))
