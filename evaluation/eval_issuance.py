@@ -2,11 +2,11 @@ import http.client
 import json
 import time
 
-for x in range(0, 2):
+for x in range(0, 20):
     start = time.time()
 
-    connection_id = "337559e1-87e9-4cfd-a4b9-799cd0e6e6b1"
-    conn = http.client.HTTPConnection("localhost", 11001)
+    connection_id = "8a34ccb2-c370-47cb-9140-38227b7a7457"
+    conn = http.client.HTTPConnection("localhost", 11000)
     payload = json.dumps({
       "auto_remove": True,
       "auto_issue": True,
@@ -41,7 +41,7 @@ for x in range(0, 2):
             "description": "Government of Example Permanent Resident Card.",
             "identifier": "83627465",
             "issuanceDate": "2019-12-03T12:19:52Z",
-            "issuer": "did:key:z6MkfWbcmcawPXh91q9vn5LFrrr3wca96yWL5iWsx3UG7pBD",
+            "issuer": "did:key:z6MkidPpQgcidH1d8bLszYGpHtAWAp2BSJuULcDKBHnex6Zo",
             "name": "Permanent Resident Card",
             "type": [
               "VerifiableCredential",

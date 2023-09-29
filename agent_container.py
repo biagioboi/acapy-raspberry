@@ -92,6 +92,7 @@ class AriesAgent(Agent):
         self.last_credential_received = None
         self.last_proof_received = None
         self.issuance_time = {}
+        self.presentation_time = {}
 
     async def detect_connection(self):
         await self._connection_ready
@@ -387,6 +388,7 @@ class AriesAgent(Agent):
                     ),
                     request,
                 )
+
             except ClientError:
                 pass
 
@@ -409,6 +411,8 @@ class AriesAgent(Agent):
 
         if state == "request-received":
             # prover role
+
+            self.presentation_time[pres_ex_id] = {'start': time.time(), 'end': 0}
             log_status(
                 "#24 Query for credentials in the wallet that satisfy the proof request"
             )
@@ -554,6 +558,7 @@ class AriesAgent(Agent):
                 f"/present-proof-2.0/records/{pres_ex_id}/send-presentation",
                 request,
             )
+            self.presentation_time[pres_ex_id]["end"] = time
 
         elif state == "presentation-received":
             # verifier role

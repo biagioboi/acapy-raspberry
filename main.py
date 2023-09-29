@@ -156,6 +156,12 @@ async def main(args):
                     diff = current["end"] - current["start"]
                     times.append(diff)
                 print(json.dumps(times))
+                times_pres = []
+                if alice_agent.agent.presentation_time is not {}:
+                    current = alice_agent.agent.issuance_time[x]
+                    diff = current["end"] - current["start"]
+                    times_pres.append(diff)
+                print(json.dumps(times_pres))
                 break
 
             elif option in "dD" and alice_agent.endorser_role:
