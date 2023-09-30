@@ -9,6 +9,7 @@ import time
 import yaml
 
 import tracemalloc
+from memory_profiler import profile
 
 from qrcode import QRCode
 
@@ -237,6 +238,7 @@ class AriesAgent(Agent):
             log_status("Credential exchange abandoned")
             self.log("Problem report message:", message.get("error_msg"))
 
+    @profile
     async def handle_issue_credential_v2_0(self, message):
         state = message.get("state")
         cred_ex_id = message["cred_ex_id"]
