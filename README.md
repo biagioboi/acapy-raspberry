@@ -1,4 +1,22 @@
-# Hyperledger Aries for RaspberryPI
+# Decentralized Authentication for Web of Things: a Self-Sovereign Identity (SSI)-Based Solution
+
+For cite this work please use:
+
+Boi, Biagio, and Christian Esposito. "Decentralized Authentication for Web of Things: a Self-Sovereign Identity (SSI)-Based Solution." 2024 International Conference on Computing, Networking and Communications (ICNC). IEEE, 2024.
+```bib
+@INPROCEEDINGS{10556086,
+  author={Boi, Biagio and Esposito, Christian},
+  booktitle={2024 International Conference on Computing, Networking and Communications (ICNC)}, 
+  title={Decentralized Authentication for Web of Things: a Self-Sovereign Identity (SSI)-Based Solution}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={684-688},
+  keywords={Privacy;Scalability;Ecosystems;Mission critical systems;Authentication;Computer architecture;Service-oriented architecture;IoT;WoT;SSI;Authentication},
+  doi={10.1109/ICNC59896.2024.10556086}}
+
+```
+
 
 Aries offers a stable and secure communication channel between two agents. In this project I want to create a Verifiable Credentials (VCs) using JSON-LD formatted credentials for creating a strong authentication for Web of Things-compliant devices.
 In the example I will use the RaspberryPI as a possible node device interested in verifying his identity using VC.
